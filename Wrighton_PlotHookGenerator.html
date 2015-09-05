@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!--Angular library linkage-->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 <!--TODO: Find out if GitHub will let me connect multiple files so I can put the CSS in as linkages.-->
 <!--TODO: Replace find and replace code with proper span tags-->
-<!--set everything to default at first to clear out existing style sheet--helps with cross-browser display issues-->
+<!--set everything to default at first to clear out existing style sheet - helps with cross-browser display issues-->
 <!--Need to add some backup fonts if chosen fonts do not exist in the user's environment-->
 <!--NTS: I can replace the names with a span in Angular.js. see here for details: http://www.w3schools.com/angular/angular_intro.asp-->
 <style>
@@ -225,17 +227,11 @@ p.style3 {
 
 <body onload="setUpForm()" class="style1">
 
-<div class="style1">
-<p class="style1">Settlement Name:</p> 
-<input type="text" name="cityName">
-<p class="style1">Settlement description (town, city, village, etc.):</p> 
-<input type="text" name="cityDescript1">
-<!--p class="style1">City name:</p> 
-<input type="text" name="cityDescript2"--><!--add later-->
-<p class="style1">Weather description:</p> 
-<input type="text" name="weatherDescript">
-<!--p class="style1">Character Name:</p> 
-<input type="text" name="characterName"-->
+<!--Add default values and randomization-->
+<div class="style1"  ng-app="">
+<p> Settlement Name: <input type="text" ng-model="cityname"></p>
+<p> Settlement description (town, city, village, etc.): <input type="text" ng-model="citytype"></p> 
+<p> Weather description: <input type="text" ng-model="weatherdescript"></p>
 
 <input type="submit" onclick="makeAdventure()" value="Generate Now">
 
@@ -256,7 +252,7 @@ p.style3 {
 
 <div>
 <h2 id="firstTitle" class="style1">Setting the Scene</h2>
-<p id="firstPara" class="style1">Your party approaches the CITYTYPE of CITYPREFIX1CITYSUFFIX1 late in the evening. The weather is WEATHERDESC but your compatriots are enthusiastic. Rumor has it that a festival is about to take place and it is open to the public.</p>
+<p id="firstPara" class="style1">Your party approaches the {{citytype}} of {{cityname}} late in the evening. The weather is {{weatherdescript}} but your compatriots are enthusiastic. Rumor has it that a festival is about to take place and it is open to the public.</p>
 </div>
 
 <div>
