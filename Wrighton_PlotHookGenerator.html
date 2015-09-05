@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--TODO: Find out if GitHub will let me connect multiple files so I can put the CSS in as linkages.-->
+<!--TODO: Replace find and replace code with proper span tags-->
+<!--set everything to default at first to clear out existing style sheet--helps with cross-browser display issues-->
+<!--Need to add some backup fonts if chosen fonts do not exist in the user's environment-->
+<!--NTS: I can replace the names with a span in Angular.js. see here for details: http://www.w3schools.com/angular/angular_intro.asp-->
+<style>
+body.default {
+    background-color: #FFFFFF;
+}
+
+div.default {
+    background-color: #FFFFFF;
+}
+
+table.default {
+	border: none;
+	border-collapse: collapse;
+	padding: 5px;
+	width: 100%
+}
+
+th.default {
+	border: none;
+	border-collapse: collapse;
+	padding: 5px;
+	text-align: left;
+}
+
+tr.default {
+	border: none;
+	border-collapse: collapse;
+	padding: 5px;
+}
+
+h1.default {
+    	color: black;
+	font-family: "Times New Roman";
+    	text-align: left;
+	font-size: 10px;
+	font-weight: none;
+}
+
+
+h2.default {
+    	color: black;
+	font-family: "Times New Roman";
+    	text-align: left;
+	font-size: 10px;
+	font-weight: none;
+}
+
+p.default {
+	color: black;
+    	font-family: "Times New Roman";
+    	font-size: 10px;
+}
+
+</style>
+
+<style>
+body.style1 {
+    background-color: #565656;
+}
+
+div.style1 {
+    background-color: #555555;
+}
+
+table.style1 {
+	border: 2px solid black;
+	border-collapse: collapse;
+	padding: 12px;
+	width: 97%
+}
+
+th.style1 {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 12px;
+	text-align: center;
+}
+
+tr.style1 {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 12px;
+}
+
+h1.style1 {
+    	color: black;
+	font-family: "Arial";
+    	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+h2.style1 {
+    	color: black;
+	font-family: "Arial";
+    	text-align: left;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+p.style1 {
+	color: white;
+    	font-family: "Arial";
+    	font-size: 12px;
+}
+
+</style>
+
+<style>
+body.style2 {
+    background-color: #FFAAAA;
+}
+
+div.style2 {
+    background-color: #FFCCCC;
+}
+
+table.style2 {
+	border: 2px solid black;
+	border-collapse: collapse;
+	padding: 12px;
+	width: 50%
+}
+
+th.style2 {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 12px;
+	text-align: center;
+}
+
+tr.style2 {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 12px;
+}
+
+h1.style2 {
+    	color: black;
+	font-family: "Arial";
+    	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+
+h2.style2 {
+    	color: black;
+	font-family: "Arial";
+    	text-align: left;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+p.style2 {
+	color: white;
+    	font-family: "Arial";
+    	font-size: 6px;
+}
+
+</style>
+
+<style>
+body.style3 {
+    background-color: #AAAAAA;
+}
+
+div.style3 {
+    background-color: #FFFFFF;
+}
+
+table.style3 {
+	border: 2px solid black;
+	border-collapse: collapse;
+	padding: 12px;
+	width: 75%
+}
+
+th.style3 {
+	border: 2px solid black;
+	border-collapse: collapse;
+	padding: 12px;
+	text-align: center;
+}
+
+tr.style3 {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 12px;
+}
+
+h1.style3 {
+    	color: black;
+	font-family: "Arial";
+    	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+
+h2.style3 {
+    	color: black;
+	font-family: "Arial";
+    	text-align: left;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+p.style3 {
+	color: white;
+    	font-family: "Arial";
+    	font-size: 14px;
+}
+
+</style>
+</head>
+
+<body onload="setUpForm()" class="style1">
+
+<div class="style1">
+<p class="style1">Settlement Name:</p> 
+<input type="text" name="cityName">
+<p class="style1">Settlement description (town, city, village, etc.):</p> 
+<input type="text" name="cityDescript1">
+<!--p class="style1">City name:</p> 
+<input type="text" name="cityDescript2"--><!--add later-->
+<p class="style1">Weather description:</p> 
+<input type="text" name="weatherDescript">
+<!--p class="style1">Character Name:</p> 
+<input type="text" name="characterName"-->
+
+<input type="submit" onclick="makeAdventure()" value="Generate Now">
+
+<!--make this dynamic-->
+<p class="style1">CSS style:</p> 
+<select id="styleDropdown" class="style1" onchange="onDropDownChange()">
+  <option value="default">Default</option>
+  <option value="style1">Style 1</option>
+  <option value="style2">Style 2</option>
+  <option value="style3">Style 3</option>
+</select>
+
+
+
+<div>
+<h1 id="mainTitle" class="style1">Title</h1>
+</div>
+
+<div>
+<h2 id="firstTitle" class="style1">Setting the Scene</h2>
+<p id="firstPara" class="style1">Your party approaches the CITYTYPE of CITYPREFIX1CITYSUFFIX1 late in the evening. The weather is WEATHERDESC but your compatriots are enthusiastic. Rumor has it that a festival is about to take place and it is open to the public.</p>
+</div>
+
+<div>
+<h2 id="secondTitle" class="style1">Important NPCs</h2><!--maybe make this a list of 3-7 NPCs?-->
+<p id="secondPara" class="style1">3-7 NPCs the players may interact with over the course of the adventure:</p>
+</div>
+
+</div>
+<!--should have an ENUM for age - young adult, old, etc...not a number because who says they can't be an elf or something?-->
+<!--Name, age, job (mayor, blacksmith, etc.), description notes-->
+<table id="NPCTable" class="style1">
+  	<tr>
+   		<th class="style1">Name</th>
+   		<th class="style1">Age</th>
+   		<th class="style1">Position</th>
+   		<th class="style1">Description</th>
+ 	</tr>
+
+</table>
+</div>
+
+<div>
+<h2 id="thirdTitle" class="style1">Obstacles, Twists, and Important Notes</h2><!--get NPC name and add notes-->
+<p id="thirdPara" class="style1" onMouseOver="onRollover(this)" onMouseOut="onRollout(this)">Roll over this text to see twists, notes, and so on about the NPCs.</p>
+</div>
+
+</div>
+
+</body>
+<script language="javascript">
+function setUpForm()
+{
+	setStyle("default");
+}
+
+//triggered on button click
+function makeAdventure()
+{
+	//fill in the "Setting the Scene" values
+	seedHooks();
+
+	//make people to meet
+	generateNPC();
+
+
+}
+
+function seedHooks()
+{
+
+//find and replace the apropriate values with the randomly generated names, descriptions etc.
+var firstParagraph = "Your party approaches the CITYTYPE of CITYPREFIX1CITYSUFFIX1 late in the evening. The weather is WEATHERDESC but your compatriots are enthusiastic. Rumor has it that a festival is about to take place and it is open to the public.";
+
+
+//replace the values with provided values--if none exist, use a default value
+//this should be broken out into its own function
+if (document.getElementsByName("cityDescript1")[0].value != "")
+{
+	var cityType = cleanString(document.getElementsByName("cityDescript1")[0].value);
+	firstParagraph = firstParagraph.replace("CITYTYPE", cityType);
+}
+else
+{
+	firstParagraph = firstParagraph.replace("CITYTYPE", "settlement");
+}
+
+if (document.getElementsByName("cityName")[0].value != "")
+{
+	var cityName = cleanString(document.getElementsByName("cityName")[0].value);
+	firstParagraph = firstParagraph.replace("CITYPREFIX1CITYSUFFIX1", cityName);
+}
+else
+{
+	firstParagraph = firstParagraph.replace("CITYPREFIX1CITYSUFFIX1", "Genericville");
+}
+
+if (document.getElementsByName("weatherDescript")[0].value != "")
+{
+	var weather = cleanString(document.getElementsByName("weatherDescript")[0].value);
+	firstParagraph = firstParagraph.replace("WEATHERDESC", weather);
+}
+else
+{
+	firstParagraph = firstParagraph.replace("WEATHERDESC", "wet");
+}
+
+//replace the string with the new paragraph
+document.getElementById("firstPara").innerHTML = firstParagraph;
+
+}
+
+function generateNPC()
+{
+	//generate between 3 and 7 NPCs
+	var numberNPC = Math.floor((Math.random() * 5) + 3);
+
+	var npcTable = document.getElementById("NPCTable");
+
+	//generate a populated row for each new NPC
+	for (x = 0; x < numberNPC; x++)
+	{
+		//create the new row for the table
+		var newRow = NPCTable.insertRow(1); //Note: the header is at 0
+
+		//populate each cell
+		
+		var nameCell = newRow.insertCell(0);
+		nameCell.innerHTML = "Name";
+
+		var ageCell = newRow.insertCell(1);
+		ageCell.innerHTML = "18";
+
+		var positionCell = newRow.insertCell(2);
+		positionCell.innerHTML = "Mayor";
+
+		var descCell = newRow.insertCell(3);
+		descCell.innerHTML = "A generic person who looks much like every other person you meet.";
+	}
+}
+
+
+function onRollover(paragraphObj)
+{
+	//show the plottwists and important notes
+	paragraphObj.innerHTML = "No notes at this time.";
+
+}
+
+function onRollout(paragraphObj)
+{
+	//restore the default text
+	paragraphObj.innerHTML = "Roll over this text to see twists, notes, and so on about the NPCs.";
+}
+
+function onDropDownChange()
+{
+	var style = document.getElementById("styleDropdown").value;
+	setStyle(style);
+}
+
+function setStyle(styleName)
+{
+	//gets all elements inside the <body> tags - NOT inclusive
+	var allElements = document.body.getElementsByTagName("*");
+
+	//set the new style on all elements within the body
+	switch(styleName) {
+   	 case "style1":
+		for (var x = 0; x < allElements.length; x++) {
+    		allElements[x].className = "style1";
+		}
+	
+		//set the <body> class separately since it isn't included above
+		document.body.className = "style1";
+
+        	break;
+    	case "style2":
+		for (var x = 0; x < allElements.length; x++) {
+    		allElements[x].className = "style2";
+		}
+
+		//set the <body> class separately since it isn't included above
+		document.body.className = "style2";
+
+        	break;
+    	case "style3":
+		for (var x = 0; x < allElements.length; x++) {
+    		allElements[x].className = "style3";
+		}
+
+		//set the <body> class separately since it isn't included above
+		document.body.className = "style3";
+        
+        	break;
+    	default:
+		for (var x = 0; x < allElements.length; x++) {
+    		allElements[x].className = "default"; //"default" not 'none' to avoid cross-browser display issues
+		}
+
+		//set the <body> class separately since it isn't included above
+		document.body.className = "default";
+        
+		break;
+	}
+}
+
+//remove non-alphanumeric characters from inputs
+function cleanString(dirtyString)
+{
+
+	dirtyString = dirtyString.replace(/[^\w\s]/g, '');
+
+	return dirtyString;
+}
+</script>
+</html>
