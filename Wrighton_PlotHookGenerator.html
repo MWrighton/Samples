@@ -3,10 +3,10 @@
 <head>
 <!--Angular library linkage-->
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<!--JQuery library-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!--TODO: Find out if GitHub will let me connect multiple files so I can put the CSS in as linkages.-->
-<!--TODO: Replace find and replace code with proper span tags-->
 <!--TODO: make CSS more interesting-->
-<!--TODO: replace the SetStyle element-grabbing code with JQuery-->
 <!--set everything to default at first to clear out existing style sheet - helps with cross-browser display issues-->
 <!--Need to add some backup fonts if chosen fonts do not exist in the user's environment-->
 <style>
@@ -302,49 +302,6 @@ function makeAdventure()
 
 }
 
-function seedHooks()
-{
-
-//find and replace the apropriate values with the randomly generated names, descriptions etc.
-//var firstParagraph = "Your party approaches the CITYTYPE of CITYPREFIX1CITYSUFFIX1 late in the evening. The weather is WEATHERDESC but your compatriots are enthusiastic. Rumor has it that a festival is about to take place and it is open to the public.";
-
-
-//replace the values with provided values--if none exist, use a default value
-//this should be broken out into its own function
-/*if (document.getElementsByName("cityDescript1")[0].value != "")
-{
-	var cityType = cleanString(document.getElementsByName("cityDescript1")[0].value);
-	firstParagraph = firstParagraph.replace("CITYTYPE", cityType);
-}
-else
-{
-	firstParagraph = firstParagraph.replace("CITYTYPE", "settlement");
-}
-
-if (document.getElementsByName("cityName")[0].value != "")
-{
-	var cityName = cleanString(document.getElementsByName("cityName")[0].value);
-	firstParagraph = firstParagraph.replace("CITYPREFIX1CITYSUFFIX1", cityName);
-}
-else
-{
-	firstParagraph = firstParagraph.replace("CITYPREFIX1CITYSUFFIX1", "Genericville");
-}
-
-if (document.getElementsByName("weatherDescript")[0].value != "")
-{
-	var weather = cleanString(document.getElementsByName("weatherDescript")[0].value);
-	firstParagraph = firstParagraph.replace("WEATHERDESC", weather);
-}
-else
-{
-	firstParagraph = firstParagraph.replace("WEATHERDESC", "wet");
-}
-
-//replace the string with the new paragraph
-document.getElementById("firstPara").innerHTML = firstParagraph;*/
-
-}
 
 function generateNPC()
 {
@@ -397,9 +354,8 @@ function onDropDownChange()
 
 function setStyle(styleName)
 {
-	//TODO: Make this JQuery!
-	//gets all elements inside the <body> tags - NOT inclusive
-	var allElements = document.body.getElementsByTagName("*");
+	//gets all elements
+	var allElements = $("*");
 
 	//set the new style on all elements within the body
 	switch(styleName) {
@@ -407,9 +363,6 @@ function setStyle(styleName)
 		for (var x = 0; x < allElements.length; x++) {
     		allElements[x].className = "style1";
 		}
-	
-		//set the <body> class separately since it isn't included above
-		document.body.className = "style1";
 
         	break;
     	case "style2":
@@ -417,26 +370,17 @@ function setStyle(styleName)
     		allElements[x].className = "style2";
 		}
 
-		//set the <body> class separately since it isn't included above
-		document.body.className = "style2";
-
         	break;
     	case "style3":
 		for (var x = 0; x < allElements.length; x++) {
     		allElements[x].className = "style3";
 		}
-
-		//set the <body> class separately since it isn't included above
-		document.body.className = "style3";
         
         	break;
     	default:
 		for (var x = 0; x < allElements.length; x++) {
-    		allElements[x].className = "default"; //"default" not 'none' to avoid cross-browser display issues
+    		allElements[x].className = "default"; //"default" custom class not 'none' to avoid cross-browser display issues
 		}
-
-		//set the <body> class separately since it isn't included above
-		document.body.className = "default";
         
 		break;
 	}
