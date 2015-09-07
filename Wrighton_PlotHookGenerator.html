@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!--Angular library linkage-->
+<!--Angular library-->
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 <!--JQuery library-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -322,16 +322,124 @@ function generateNPC()
 		nameCell.innerHTML = "Name";
 
 		var ageCell = newRow.insertCell(1);
-		ageCell.innerHTML = "18";
+		ageCell.innerHTML = seedPersonAge();
 
-		var positionCell = newRow.insertCell(2);
-		positionCell.innerHTML = "Mayor";
+		var rankCell = newRow.insertCell(2);
+		rankCell.innerHTML = "Mayor";
 
 		var descCell = newRow.insertCell(3);
 		descCell.innerHTML = "A generic person who looks much like every other person you meet.";
 	}
+
 }
 
+/*******IN PROGRESS - These might be better in an external file*******/
+/*******SCENE SETTING*******/
+function seedCityName()
+{
+var prefix = getCityPrefix();
+var suffix = getCitySuffix();
+
+return (prefix+suffix);
+}
+
+function getCityPrefix()
+{
+
+return "TempPRE";
+
+}
+
+function getCitySuffix()
+{
+
+return "TempSUFF";
+
+}
+
+function seedCityType()
+{
+/*
+village
+hamlet
+town
+city
+settlement
+
+*/
+}
+
+function seedWeatherDescription()
+{
+/*
+Wet
+Hot
+Humid
+Dry
+Sunny
+Overcast
+Cold
+Mild
+Damp
+Frigid
+Freezing
+Cloudy
+Breezy
+Windy
+Clear
+
+*/
+}
+/*******END SCENE SETTING*******/
+/*******PEOPLE*******/
+function seedPersonName()
+{
+/*
+
+
+
+*/
+}
+
+
+function seedPersonAge()
+{
+//just do a number between 14 and 65 - later add age categories
+/*
+child
+elder
+young adult
+middle age
+infant
+
+*/
+
+var ageNPC = Math.floor((Math.random() * 52) + 14); //TEST!!!
+
+return ageNPC;
+}
+
+
+function seedPersonRank()
+{
+//need either some logic or a more gender-neutral term for 'seamstress'
+var cityPositionList = ["Mayor", "Blacksmith", "Carpenter", "Mayor", "Tailor", "Seamstress", "Shepherd", "Merchant", "Mercenary", "Bard", "Tinker", "Beggar", "Miller", "Baker", "Herder", "Cutpurse", "Innkeeper", "Scullery Maid", "Housekeeper", "Governess", "Page", "Guard", "Herald", "Tanner", "Messenger", "Fisherman", "Weaver", "Prostitute", "Priest", "Acolyte", "Alchemist", "Herbalist", "Farmer", "Ranger", "Cobbler", "Hunter"];
+
+
+
+
+
+}
+
+
+function seedPersonDescription()
+{
+//eye color
+//hair color
+//fat, thin, etc.
+
+}
+/*******END PEOPLE*******/
 
 function onRollover(paragraphObj)
 {
