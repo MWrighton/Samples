@@ -7,6 +7,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!--TODO: Find out if GitHub will let me connect multiple files so I can put the CSS in as linkages.-->
 <!--TODO: make CSS more interesting-->
+<!--TODO: Hide the table headers when no NPCs have been generated-->
+<!--TODO: Add 'lock' buttons so the inputs won't change when locked-->
 <!--set everything to default at first to clear out existing style sheet - helps with cross-browser display issues-->
 <!--Need to add some backup fonts if chosen fonts do not exist in the user's environment-->
 <style>
@@ -42,7 +44,7 @@ h1.default {
     	color: black;
 	font-family: "Times New Roman";
     	text-align: left;
-	font-size: 10px;
+	font-size: 20px;
 	font-weight: none;
 }
 
@@ -51,14 +53,14 @@ h2.default {
     	color: black;
 	font-family: "Times New Roman";
     	text-align: left;
-	font-size: 10px;
+	font-size: 18px;
 	font-weight: none;
 }
 
 p.default {
 	color: black;
     	font-family: "Times New Roman";
-    	font-size: 10px;
+    	font-size: 14px;
 }
 
 </style>
@@ -230,9 +232,9 @@ p.style3 {
 
 <!--Add default values and randomization-->
 <div ng-app="">
-<p> Settlement Name: <input type="text" ng-model="cityname"></p>
-<p> Settlement description (town, city, village, etc.): <input type="text" ng-model="citytype"></p> 
-<p> Weather description: <input type="text" ng-model="weatherdescript"></p>
+<p> Settlement Name: <input type="text" id="cityName" ng-model="cityname"></p>
+<p> Settlement description (town, city, village, etc.): <input type="text" id="cityDescript" ng-model="citytype"></p> 
+<p> Weather description: <input type="text" id="weatherDescript" ng-model="weatherdescript"></p>
 
 <input type="submit" onclick="makeAdventure()" value="Generate Now">
 
@@ -267,7 +269,7 @@ p.style3 {
 <table id="NPCTable">
   	<tr>
    		<th>Name</th>
-   		<th>Age</th>
+   		<th>Age<abbr title="Ages generated are between 14 and 65">*</abbr></th>
    		<th>Position</th>
    		<th>Description</th>
  	</tr>
@@ -284,9 +286,16 @@ p.style3 {
 
 </body>
 <script language="javascript">
+//should add checking to make sure the page is loaded
 function setUpForm()
 {
+	//Set CSS style sheet
 	setStyle("default");
+
+	//Give default values to the inputs
+	//seedCityName();
+	//seedCityType();
+	//seedWeatherDescription();
 }
 
 //triggered on button click
@@ -340,7 +349,7 @@ function seedCityName()
 var prefix = getCityPrefix();
 var suffix = getCitySuffix();
 
-return (prefix+suffix);
+$("#cityName").val(prefix+suffix);
 }
 
 function getCityPrefix()
@@ -367,6 +376,9 @@ city
 settlement
 
 */
+
+$("#cityDescript").val("town");
+
 }
 
 function seedWeatherDescription()
@@ -387,8 +399,10 @@ Cloudy
 Breezy
 Windy
 Clear
-
+Balmy
 */
+$("#weatherDescript").val("balmy");
+
 }
 /*******END SCENE SETTING*******/
 /*******PEOPLE*******/
