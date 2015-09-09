@@ -231,7 +231,7 @@ p.style3 {
 <body onload="setUpForm()">
 
 <!--Add default values and randomization-->
-<div ng-app="">
+<div ng-app="setSeed" ng-controller="seedValues">
 <p> Settlement Name: <input type="text" id="cityName" ng-model="cityname"></p>
 <p> Settlement description (town, city, village, etc.): <input type="text" id="cityDescript" ng-model="citytype"></p> 
 <p> Weather description: <input type="text" id="weatherDescript" ng-model="weatherdescript"></p>
@@ -286,6 +286,15 @@ p.style3 {
 
 </body>
 <script language="javascript">
+//Angular controller
+var mod = angular.module('setSeed', []);
+mod.controller('seedValues', function($scope) {
+	$scope.cityname = "TOWNNAME";
+	$scope.citytype = "HAMLET";
+	$scope.weatherdescript = "BALMY";
+});
+
+
 //should add checking to make sure the page is loaded
 function setUpForm()
 {
@@ -349,7 +358,8 @@ function seedCityName()
 var prefix = getCityPrefix();
 var suffix = getCitySuffix();
 
-$("#cityName").val(prefix+suffix);
+//$("#cityName").val(prefix+suffix);
+return (prefix+suffix);
 }
 
 function getCityPrefix()
