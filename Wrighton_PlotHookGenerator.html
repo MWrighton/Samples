@@ -289,22 +289,66 @@ p.style3 {
 //Angular controller
 var mod = angular.module('setSeed', []);
 mod.controller('seedValues', function($scope) {
-	$scope.cityname = "TOWNNAME";
-	$scope.citytype = "HAMLET";
-	$scope.weatherdescript = "BALMY";
-});
+	$scope.cityname = seedCityName();
+	$scope.citytype = seedCityType();
+	$scope.weatherdescript = seedWeatherDescription();
 
+
+/*******SCENE SETTING*******/
+
+function seedCityName()
+{
+var prefix = getCityPrefix();
+var suffix = getCitySuffix();
+
+return (prefix+suffix);
+}
+
+function getCityPrefix()
+{
+
+return "TempPRE";
+
+}
+
+function getCitySuffix()
+{
+
+return "TempSUFF";
+
+}
+
+
+function seedCityType()
+{
+var cityTypeList = ["village", "town", "settlement", "hamlet", "city", "community", "parish", "region"]; 
+
+var townType = cityTypeList[Math.floor((Math.random() * cityTypeList.length))];
+
+return townType;
+
+}
+
+function seedWeatherDescription()
+{
+var weatherTypeList = ["wet", "hot", "humid", "dry", "sunny", "overcast", "cold", "mild", "damp", "frigid", "rainy", "snowy", "freezing", "cloudy", "breezy", "windy", "clear", "balmy", "bright"]; 
+
+var weatherType = weatherTypeList[Math.floor((Math.random() * weatherTypeList.length))];
+
+return weatherType;
+
+}
+/*******END SCENE SETTING*******/
+
+
+});
+/*******END ANGULAR CONTROLLER CODE*******/
 
 //should add checking to make sure the page is loaded
 function setUpForm()
 {
 	//Set CSS style sheet
 	setStyle("default");
-
-	//Give default values to the inputs
-	//seedCityName();
-	//seedCityType();
-	//seedWeatherDescription();
 }
 
 //triggered on button click
@@ -343,7 +387,7 @@ function generateNPC()
 		ageCell.innerHTML = seedPersonAge();
 
 		var rankCell = newRow.insertCell(2);
-		rankCell.innerHTML = "Mayor";
+		rankCell.innerHTML = seedPersonRank();
 
 		var descCell = newRow.insertCell(3);
 		descCell.innerHTML = "A generic person who looks much like every other person you meet.";
@@ -352,69 +396,7 @@ function generateNPC()
 }
 
 /*******IN PROGRESS - These might be better in an external file*******/
-/*******SCENE SETTING*******/
-function seedCityName()
-{
-var prefix = getCityPrefix();
-var suffix = getCitySuffix();
 
-//$("#cityName").val(prefix+suffix);
-return (prefix+suffix);
-}
-
-function getCityPrefix()
-{
-
-return "TempPRE";
-
-}
-
-function getCitySuffix()
-{
-
-return "TempSUFF";
-
-}
-
-function seedCityType()
-{
-/*
-village
-hamlet
-town
-city
-settlement
-
-*/
-
-$("#cityDescript").val("town");
-
-}
-
-function seedWeatherDescription()
-{
-/*
-Wet
-Hot
-Humid
-Dry
-Sunny
-Overcast
-Cold
-Mild
-Damp
-Frigid
-Freezing
-Cloudy
-Breezy
-Windy
-Clear
-Balmy
-*/
-$("#weatherDescript").val("balmy");
-
-}
-/*******END SCENE SETTING*******/
 /*******PEOPLE*******/
 function seedPersonName()
 {
@@ -438,7 +420,7 @@ infant
 
 */
 
-var ageNPC = Math.floor((Math.random() * 52) + 14); //TEST!!!
+var ageNPC = Math.floor((Math.random() * 52) + 14);
 
 return ageNPC;
 }
@@ -447,11 +429,11 @@ return ageNPC;
 function seedPersonRank()
 {
 //need either some logic or a more gender-neutral term for 'seamstress'
-var cityPositionList = ["Mayor", "Blacksmith", "Carpenter", "Mayor", "Tailor", "Seamstress", "Shepherd", "Merchant", "Mercenary", "Bard", "Tinker", "Beggar", "Miller", "Baker", "Herder", "Cutpurse", "Innkeeper", "Scullery Maid", "Housekeeper", "Governess", "Page", "Guard", "Herald", "Tanner", "Messenger", "Fisherman", "Weaver", "Prostitute", "Priest", "Acolyte", "Alchemist", "Herbalist", "Farmer", "Ranger", "Cobbler", "Hunter"];
+var cityPositionList = ["Mayor", "Blacksmith", "Carpenter", "Brewer", "Tailor", "Seamstress", "Shepherd", "Merchant", "Mercenary", "Bard", "Tinker", "Beggar", "Miller", "Baker", "Herder", "Cutpurse", "Innkeeper", "Scullery Maid", "Housekeeper", "Governess", "Page", "Guard", "Herald", "Tanner", "Messenger", "Fisherman", "Weaver", "Prostitute", "Priest", "Acolyte", "Alchemist", "Herbalist", "Farmer", "Ranger", "Cobbler", "Hunter"];
 
+var jobNPC = cityPositionList[Math.floor((Math.random() * cityPositionList.length))];
 
-
-
+return jobNPC;
 
 }
 
