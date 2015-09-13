@@ -10,9 +10,18 @@
 <!--TODO: Hide the table headers when no NPCs have been generated-->
 <!--TODO: Add 'lock' buttons so the inputs won't change when locked-->
 <!--TODO: Add some gender checking to names/job descriptions-->
+<!--TODO: Convert the font sizes to percentage, add minimum sizes for different screen sizes-->
+<!--TODO: Table text, input boxes need some CSS-->
 <!--set everything to default at first to clear out existing style sheet - helps with cross-browser display issues-->
 <!--Need to add some backup fonts if chosen fonts do not exist in the user's environment-->
 <!--The Generate NPC data functions can be made into the same function - feed the array and get back a random value-->
+<!--Style 1 - Halloween
+Style 2 - Jungle
+Style 3 - Parchment-->
+<link href='https://fonts.googleapis.com/css?family=Homemade+Apple' rel='stylesheet' type='text/css'><!--Parchment style-->
+<link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'><!--Halloween style-->
+<link href='https://fonts.googleapis.com/css?family=Tangerine:700' rel='stylesheet' type='text/css'><!--Jungle paragraph style-->
+<link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'><!--Jungle header style-->
 <style>
 body.default {
     background-color: #FFFFFF;
@@ -69,14 +78,16 @@ p.default {
 
 <style>
 body.style1 {
-    background-color: #565656;
+	margin: auto;
+    	background-color: #565656;
 }
 
 div.style1 {
-    background-color: #555555;
+    	background-color: #555555;
 }
 
 table.style1 {
+	margin: auto;
 	border: 2px solid black;
 	border-collapse: collapse;
 	padding: 12px;
@@ -98,36 +109,36 @@ tr.style1 {
 
 h1.style1 {
     	color: black;
-	font-family: "Arial";
+	font-family: "Reenie Beanie", cursive;
     	text-align: center;
-	font-size: 20px;
+	font-size: 40px;
 	font-weight: bold;
 }
 
 
 h2.style1 {
     	color: black;
-	font-family: "Arial";
+	font-family: "Reenie Beanie", cursive;
     	text-align: left;
-	font-size: 16px;
+	font-size: 36px;
 	font-weight: bold;
 }
 
 p.style1 {
 	color: white;
-    	font-family: "Arial";
-    	font-size: 12px;
+    	font-family: "Reenie Beanie", cursive;
+    	font-size: 22px;
 }
 
 </style>
 
 <style>
 body.style2 {
-    background-color: #FFAAAA;
+    	background-color: #003300;
 }
 
 div.style2 {
-    background-color: #FFCCCC;
+    	background-color: #006600;
 }
 
 table.style2 {
@@ -152,7 +163,7 @@ tr.style2 {
 
 h1.style2 {
     	color: black;
-	font-family: "Arial";
+	font-family: "Great Vibes", cursive;
     	text-align: center;
 	font-size: 16px;
 	font-weight: bold;
@@ -161,7 +172,7 @@ h1.style2 {
 
 h2.style2 {
     	color: black;
-	font-family: "Arial";
+	font-family: "Great Vibes", cursive;
     	text-align: left;
 	font-size: 10px;
 	font-weight: bold;
@@ -169,7 +180,7 @@ h2.style2 {
 
 p.style2 {
 	color: white;
-    	font-family: "Arial";
+    	font-family: "Tangerine", cursive;
     	font-size: 6px;
 }
 
@@ -177,11 +188,11 @@ p.style2 {
 
 <style>
 body.style3 {
-    background-color: #AAAAAA;
+    background-color: #FFFFCC;
 }
 
 div.style3 {
-    background-color: #FFFFFF;
+    background-color: #FFFFCC;
 }
 
 table.style3 {
@@ -206,7 +217,7 @@ tr.style3 {
 
 h1.style3 {
     	color: black;
-	font-family: "Arial";
+	font-family: "Homemade Apple", cursive;
     	text-align: center;
 	font-size: 25px;
 	font-weight: bold;
@@ -214,16 +225,16 @@ h1.style3 {
 
 
 h2.style3 {
-    	color: black;
-	font-family: "Arial";
+    	color: #0E0700;
+	font-family: "Homemade Apple", cursive;
     	text-align: left;
 	font-size: 20px;
 	font-weight: bold;
 }
 
 p.style3 {
-	color: white;
-    	font-family: "Arial";
+	color: #140A00;
+    	font-family: "Homemade Apple", cursive;
     	font-size: 14px;
 }
 
@@ -256,13 +267,13 @@ p.style3 {
 </div>
 
 <div>
-<h2 id="firstTitle" class="style1">Setting the Scene</h2>
-<p id="firstPara" class="style1">Your party approaches the {{citytype}} of {{cityname}} late in the evening. The weather is {{weatherdescript}} but your compatriots are enthusiastic. Rumor has it that a festival is about to take place and it is open to the public.</p>
+<h2 id="firstTitle">Setting the Scene</h2>
+<p id="firstPara">Your party approaches the {{citytype}} of {{cityname}} late in the evening. The weather is {{weatherdescript}} but your compatriots are enthusiastic. Rumor has it that a festival is about to take place and it is open to the public.</p>
 </div>
 
 <div>
-<h2 id="secondTitle" class="style1">Important NPCs</h2><!--maybe make this a list of 3-7 NPCs?-->
-<p id="secondPara" class="style1">3-7 NPCs the players may interact with over the course of the adventure:</p>
+<h2 id="secondTitle">Important NPCs</h2><!--maybe make this a list of 3-7 NPCs?-->
+<p id="secondPara">3-7 NPCs the players may interact with over the course of the adventure:</p>
 </div>
 
 </div>
@@ -308,14 +319,61 @@ return (prefix+suffix);
 
 function getCityPrefix()
 {
-
+/*
+Merry
+Stead
+Red
+Green
+Hart
+Dark
+Sunny
+Gold
+Silver
+Copper
+Clear
+Sweet
+River
+Deep
+Ever
+Coast
+Ice
+Rain
+Bright
+Shatter
+White
+Black
+Cherry
+Apple
+*/
 return "TempPRE";
 
 }
 
 function getCitySuffix()
 {
-
+/*
+vale
+ville
+ton
+stead
+shade
+river
+wick
+view
+wood
+hill
+dale
+mount
+valley
+sand
+gloam
+gloom
+march
+plains
+peak
+crossing
+stake
+*/
 return "TempSUFF";
 
 }
@@ -483,8 +541,81 @@ return jobNPC;
 function seedPersonDescription()
 {
 //eye color
+//
+/*EYE ADJECTIVE
+watery
+bright
+blood-shot
+wide
+squinty
+alert
+crafty
+dark
+innocent
+
+*/
+/*EYE COLOR
+blue
+gray
+green
+hazel
+brown
+amber
+black
+
+
+*/
+
 //hair color
+/*HAIR ADJECTIVE
+long
+short
+wavy
+curly
+straight
+shoulder-length
+braided
+dirty
+
+*/
+/*HAIR COLOR
+brown
+blond(e) //need to check gender for the e
+black
+red
+auburn
+gray
+white
+
+
+*/
+
 //fat, thin, etc.
+/*HEIGHT
+tall
+short
+average height
+
+*/
+
+/*WEIGHT
+stocky
+robust
+thin
+spindly
+muscular
+fat
+portly
+skeletal
+lean
+
+
+*/
+}
+
+function pickRandom(array)
+{
+
 
 }
 /*******END PEOPLE*******/
