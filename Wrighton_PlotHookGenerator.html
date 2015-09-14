@@ -311,6 +311,7 @@ mod.controller('seedValues', function($scope) {
 
 function seedCityName()
 {
+//need to make sure prefix and suffix don't match
 var prefix = getCityPrefix();
 var suffix = getCitySuffix();
 
@@ -319,63 +320,21 @@ return (prefix+suffix);
 
 function getCityPrefix()
 {
-/*
-Merry
-Stead
-Red
-Green
-Hart
-Dark
-Sunny
-Gold
-Silver
-Copper
-Clear
-Sweet
-River
-Deep
-Ever
-Coast
-Ice
-Rain
-Bright
-Shatter
-White
-Black
-Cherry
-Apple
-*/
-return "TempPRE";
+var prefixList = ["Merry", "Stead", "Red", "Green", "Hart", "Dark", "Sunny", "Gold", "Silver", "Copper", "Clear", "Sweet", "River", "Deep", "Ever", "Coast", "Ice", "Rain", "Bright", "Shatter", "White", "Black", "Cherry", "Apple", "Birch", "Oak", "Maple", "Pine", "Arbor", "Ash"]; 
+
+var prefix = prefixList[Math.floor((Math.random() * prefixList.length))];
+
+return prefix;
 
 }
 
 function getCitySuffix()
 {
-/*
-vale
-ville
-ton
-stead
-shade
-river
-wick
-view
-wood
-hill
-dale
-mount
-valley
-sand
-gloam
-gloom
-march
-plains
-peak
-crossing
-stake
-*/
-return "TempSUFF";
+var suffixList = ["vale", "ville", "ton", "stead", "shade", "river", "wick", "view", "wood", "hill", "dale", "mount", "valley", "sand", "gloam", "gloom", "march", "plains", "peak", "crossing", "stake", "field", "town"]; 
 
+var suffix = suffixList[Math.floor((Math.random() * suffixList.length))];
+
+return suffix;
 }
 
 
@@ -450,7 +409,7 @@ function generateNPC()
 		rankCell.innerHTML = seedPersonRank();
 
 		var descCell = newRow.insertCell(3);
-		descCell.innerHTML = "A generic person who looks much like every other person you meet.";
+		descCell.innerHTML = seedPersonDescription();
 	}
 
 }
@@ -541,30 +500,12 @@ return jobNPC;
 function seedPersonDescription()
 {
 //eye color
-//
-/*EYE ADJECTIVE
-watery
-bright
-blood-shot
-wide
-squinty
-alert
-crafty
-dark
-innocent
+var eyeAdjList = ["watery", "bright", "blood-shot", "wide", "squinty", "alert", "crafty", "dark", "innocent", "sad", "doleful", "doe-like", "sharp"]; 
+var eyeColorList = ["blue", "gray", "green", "hazel", "brown", "amber", "black"];
 
-*/
-/*EYE COLOR
-blue
-gray
-green
-hazel
-brown
-amber
-black
+var eyeAdj = pickRandom(eyeAdjList);
+var eyeColor = pickRandom(eyeColorList);
 
-
-*/
 
 //hair color
 /*HAIR ADJECTIVE
@@ -611,13 +552,15 @@ lean
 
 
 */
+
+return (eyeAdj + " " + eyeColor + ".");
 }
 
 function pickRandom(array)
 {
-
-
+return array[Math.floor((Math.random() * array.length))];
 }
+
 /*******END PEOPLE*******/
 
 function onRollover(paragraphObj)
