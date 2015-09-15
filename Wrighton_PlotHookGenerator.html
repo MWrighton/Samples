@@ -263,7 +263,7 @@ p.style3 {
 
 
 <div>
-<h1 id="mainTitle">Title</h1>
+<h1 id="mainTitle">Random Setting Generator</h1>
 </div>
 
 <div>
@@ -311,9 +311,15 @@ mod.controller('seedValues', function($scope) {
 
 function seedCityName()
 {
+var prefix;
+var suffix;
+
 //need to make sure prefix and suffix don't match
-var prefix = getCityPrefix();
-var suffix = getCitySuffix();
+while (prefix == suffix)
+{
+prefix = getCityPrefix();
+suffix = getCitySuffix();
+}
 
 return (prefix+suffix);
 }
@@ -373,9 +379,6 @@ function setUpForm()
 //triggered on button click
 function makeAdventure()
 {
-	//fill in the "Setting the Scene" values
-	//This is being done with Angular now
-	//seedHooks();
 
 	//make people to meet
 	generateNPC();
@@ -507,53 +510,22 @@ var eyeAdj = pickRandom(eyeAdjList);
 var eyeColor = pickRandom(eyeColorList);
 
 
-//hair color
-/*HAIR ADJECTIVE
-long
-short
-wavy
-curly
-straight
-shoulder-length
-braided
-dirty
+//hair color - need some gender determinator for blond(e)
+var hairAdjList = ["long", "short", "wavy", "curly", "strait", "shoulder-length", "braided", "dirty", "frizzy"];
+var hairColorList = ["brown", "blond", "black", "red", "auburn", "gray", "white"];
 
-*/
-/*HAIR COLOR
-brown
-blond(e) //need to check gender for the e
-black
-red
-auburn
-gray
-white
+var hairAdj = pickRandom(hairAdjList);
+var hairColor = pickRandom(hairColorList);
+
+//height and build
+var heightList = ["tall", "short", "average height"];
+var bodyBuildList = ["stocky", "robust", "thin", "spindly", "muscular", "fat", "portly", "skeletal", "lean"];
+
+var height = pickRandom(heightList);
+var bodyBuild = pickRandom(bodyBuildList);
 
 
-*/
-
-//fat, thin, etc.
-/*HEIGHT
-tall
-short
-average height
-
-*/
-
-/*WEIGHT
-stocky
-robust
-thin
-spindly
-muscular
-fat
-portly
-skeletal
-lean
-
-
-*/
-
-return (eyeAdj + " " + eyeColor + ".");
+return (eyeAdj + " " + eyeColor + " eyes. "+ hairAdj + " " + hairColor + " hair. " + height + " and " + bodyBuild + ". ");
 }
 
 function pickRandom(array)
