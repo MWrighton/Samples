@@ -1,0 +1,52 @@
+body.style1 {
+	margin: auto;
+    	background-color: #565656;
+}
+
+div.style1 {
+    	background-color: #555555;
+}
+
+table.style1 {
+	margin: auto;
+	border: 2px solid black;
+	border-collapse: collapse;
+	padding: 12px;
+	width: 97%
+}
+
+th.style1 {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 12px;
+	text-align: center;
+}
+
+tr.style1 {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 12px;
+}
+
+h1.style1 {
+    	color: black;
+	font-family: "Reenie Beanie", cursive;
+    	text-align: center;
+	font-size: 40px;
+	font-weight: bold;
+}
+
+
+h2.style1 {
+    	color: black;
+	font-family: "Reenie Beanie", cursive;
+    	text-align: left;
+	font-size: 36px;
+	font-weight: bold;
+}
+
+p.style1 {
+	color: white;
+    	font-family: "Reenie Beanie", cursive;
+    	font-size: 22px;
+}

@@ -5,6 +5,20 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 <!--JQuery library-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!--Style 0 - Default-->
+<link rel="stylesheet" type="text/css" href="Wrighton_PlotHookGenerator_Default.css">
+<!--Style 1 - Halloween-->
+<link rel="stylesheet" type="text/css" href="Wrighton_PlotHookGenerator_Style1.css">
+<!--Style 2 - Jungle-->
+<link rel="stylesheet" type="text/css" href="Wrighton_PlotHookGenerator_Style2.css">
+<!--Style 3 - Parchment-->
+<link rel="stylesheet" type="text/css" href="Wrighton_PlotHookGenerator_Style3.css">
+<!--Font links for CSS-->
+<link href='https://fonts.googleapis.com/css?family=Homemade+Apple' rel='stylesheet' type='text/css'><!--Parchment style-->
+<link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'><!--Halloween style-->
+<link href='https://fonts.googleapis.com/css?family=Tangerine:700' rel='stylesheet' type='text/css'><!--Jungle paragraph style-->
+<link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'><!--Jungle header style-->
+
 <!--TODO: Find out if GitHub will let me connect multiple files so I can put the CSS in as linkages.-->
 <!--TODO: make CSS more interesting-->
 <!--TODO: Hide the table headers when no NPCs have been generated-->
@@ -15,230 +29,7 @@
 <!--set everything to default at first to clear out existing style sheet - helps with cross-browser display issues-->
 <!--Need to add some backup fonts if chosen fonts do not exist in the user's environment-->
 <!--The Generate NPC data functions can be made into the same function - feed the array and get back a random value-->
-<!--Style 1 - Halloween
-Style 2 - Jungle
-Style 3 - Parchment-->
-<link href='https://fonts.googleapis.com/css?family=Homemade+Apple' rel='stylesheet' type='text/css'><!--Parchment style-->
-<link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'><!--Halloween style-->
-<link href='https://fonts.googleapis.com/css?family=Tangerine:700' rel='stylesheet' type='text/css'><!--Jungle paragraph style-->
-<link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'><!--Jungle header style-->
-<style>
-body.default {
-    background-color: #FFFFFF;
-}
 
-div.default {
-    background-color: #FFFFFF;
-}
-
-table.default {
-	border: none;
-	border-collapse: collapse;
-	padding: 5px;
-	width: 100%
-}
-
-th.default {
-	border: none;
-	border-collapse: collapse;
-	padding: 5px;
-	text-align: left;
-}
-
-tr.default {
-	border: none;
-	border-collapse: collapse;
-	padding: 5px;
-}
-
-h1.default {
-    	color: black;
-	font-family: "Times New Roman";
-    	text-align: left;
-	font-size: 20px;
-	font-weight: none;
-}
-
-
-h2.default {
-    	color: black;
-	font-family: "Times New Roman";
-    	text-align: left;
-	font-size: 18px;
-	font-weight: none;
-}
-
-p.default {
-	color: black;
-    	font-family: "Times New Roman";
-    	font-size: 14px;
-}
-
-</style>
-
-<style>
-body.style1 {
-	margin: auto;
-    	background-color: #565656;
-}
-
-div.style1 {
-    	background-color: #555555;
-}
-
-table.style1 {
-	margin: auto;
-	border: 2px solid black;
-	border-collapse: collapse;
-	padding: 12px;
-	width: 97%
-}
-
-th.style1 {
-	border: 1px solid black;
-	border-collapse: collapse;
-	padding: 12px;
-	text-align: center;
-}
-
-tr.style1 {
-	border: 1px solid black;
-	border-collapse: collapse;
-	padding: 12px;
-}
-
-h1.style1 {
-    	color: black;
-	font-family: "Reenie Beanie", cursive;
-    	text-align: center;
-	font-size: 40px;
-	font-weight: bold;
-}
-
-
-h2.style1 {
-    	color: black;
-	font-family: "Reenie Beanie", cursive;
-    	text-align: left;
-	font-size: 36px;
-	font-weight: bold;
-}
-
-p.style1 {
-	color: white;
-    	font-family: "Reenie Beanie", cursive;
-    	font-size: 22px;
-}
-
-</style>
-
-<style>
-body.style2 {
-    	background-color: #003300;
-}
-
-div.style2 {
-    	background-color: #006600;
-}
-
-table.style2 {
-	border: 2px solid black;
-	border-collapse: collapse;
-	padding: 12px;
-	width: 50%
-}
-
-th.style2 {
-	border: 1px solid black;
-	border-collapse: collapse;
-	padding: 12px;
-	text-align: center;
-}
-
-tr.style2 {
-	border: 1px solid black;
-	border-collapse: collapse;
-	padding: 12px;
-}
-
-h1.style2 {
-    	color: black;
-	font-family: "Great Vibes", cursive;
-    	text-align: center;
-	font-size: 16px;
-	font-weight: bold;
-}
-
-
-h2.style2 {
-    	color: black;
-	font-family: "Great Vibes", cursive;
-    	text-align: left;
-	font-size: 10px;
-	font-weight: bold;
-}
-
-p.style2 {
-	color: white;
-    	font-family: "Tangerine", cursive;
-    	font-size: 6px;
-}
-
-</style>
-
-<style>
-body.style3 {
-    background-color: #FFFFCC;
-}
-
-div.style3 {
-    background-color: #FFFFCC;
-}
-
-table.style3 {
-	border: 2px solid black;
-	border-collapse: collapse;
-	padding: 12px;
-	width: 75%
-}
-
-th.style3 {
-	border: 2px solid black;
-	border-collapse: collapse;
-	padding: 12px;
-	text-align: center;
-}
-
-tr.style3 {
-	border: 1px solid black;
-	border-collapse: collapse;
-	padding: 12px;
-}
-
-h1.style3 {
-    	color: black;
-	font-family: "Homemade Apple", cursive;
-    	text-align: center;
-	font-size: 25px;
-	font-weight: bold;
-}
-
-
-h2.style3 {
-    	color: #0E0700;
-	font-family: "Homemade Apple", cursive;
-    	text-align: left;
-	font-size: 20px;
-	font-weight: bold;
-}
-
-p.style3 {
-	color: #140A00;
-    	font-family: "Homemade Apple", cursive;
-    	font-size: 14px;
-}
-
-</style>
 </head>
 
 <body onload="setUpForm()">

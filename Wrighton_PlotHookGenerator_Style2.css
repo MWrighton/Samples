@@ -1,0 +1,50 @@
+body.style2 {
+    	background-color: #003300;
+}
+
+div.style2 {
+    	background-color: #006600;
+}
+
+table.style2 {
+	border: 2px solid black;
+	border-collapse: collapse;
+	padding: 12px;
+	width: 50%
+}
+
+th.style2 {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 12px;
+	text-align: center;
+}
+
+tr.style2 {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 12px;
+}
+
+h1.style2 {
+    	color: black;
+	font-family: "Great Vibes", cursive;
+    	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+
+h2.style2 {
+    	color: black;
+	font-family: "Great Vibes", cursive;
+    	text-align: left;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+p.style2 {
+	color: white;
+    	font-family: "Tangerine", cursive;
+    	font-size: 6px;
+}
