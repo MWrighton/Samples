@@ -14,6 +14,7 @@ table.style2 {
 }
 
 th.style2 {
+	font-family: "Great Vibes", cursive;
 	border: 1px solid black;
 	border-collapse: collapse;
 	padding: 12px;
@@ -24,6 +25,10 @@ tr.style2 {
 	border: 1px solid black;
 	border-collapse: collapse;
 	padding: 12px;
+}
+
+td.style2 {
+	font-family: "Great Vibes", cursive;
 }
 
 h1.style2 {

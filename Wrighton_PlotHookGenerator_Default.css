@@ -14,6 +14,7 @@ table.default {
 }
 
 th.default {
+	font-family: "Times New Roman";
 	border: none;
 	border-collapse: collapse;
 	padding: 5px;
@@ -24,6 +25,10 @@ tr.default {
 	border: none;
 	border-collapse: collapse;
 	padding: 5px;
+}
+
+td.default {
+	font-family: "Times New Roman";
 }
 
 h1.default {
