@@ -318,6 +318,11 @@ var bodyBuildList = ["stocky", "robust", "thin", "spindly", "muscular", "fat", "
 var height = pickRandom(heightList);
 var bodyBuild = pickRandom(bodyBuildList);
 
+//capitalize the first letter of each sentance
+eyeAdj = eyeAdj.charAt(0).toUpperCase() + eyeAdj.slice(1);
+hairAdj = hairAdj.charAt(0).toUpperCase() + hairAdj.slice(1);
+height = height.charAt(0).toUpperCase() + height.slice(1);
+
 
 return (eyeAdj + " " + eyeColor + " eyes. "+ hairAdj + " " + hairColor + " hair. " + height + " and " + bodyBuild + ". ");
 }
