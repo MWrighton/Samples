@@ -7,9 +7,10 @@ div.style3 {
 }
 
 table.style3 {
+
 	border: 2px solid black;
 	border-collapse: collapse;
-	padding: 12px;
+	padding: 1em;
 	width: 75%
 }
 
@@ -17,17 +18,18 @@ th.style3 {
 	font-family: "Homemade Apple", cursive;
 	border: 2px solid black;
 	border-collapse: collapse;
-	padding: 12px;
+	padding: 1em;
 	text-align: center;
 }
 
 tr.style3 {
 	border: 1px solid black;
 	border-collapse: collapse;
-	padding: 12px;
+	padding: 1em;
 }
 
 td.style3 {
+	padding: 1em;
 	font-family: "Homemade Apple", cursive;
 }
 
@@ -35,7 +37,7 @@ h1.style3 {
     	color: black;
 	font-family: "Homemade Apple", cursive;
     	text-align: center;
-	font-size: 25px;
+	font-size: 2em;
 	font-weight: bold;
 }
 
@@ -44,12 +46,12 @@ h2.style3 {
     	color: #0E0700;
 	font-family: "Homemade Apple", cursive;
     	text-align: left;
-	font-size: 20px;
+	font-size: 1.6em;
 	font-weight: bold;
 }
 
 p.style3 {
 	color: #140A00;
     	font-family: "Homemade Apple", cursive;
-    	font-size: 14px;
+    	font-size: 1.2em;
 }
