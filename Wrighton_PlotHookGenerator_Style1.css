@@ -11,7 +11,7 @@ table.style1 {
 	margin: auto;
 	border: 2px solid black;
 	border-collapse: collapse;
-	padding: 12px;
+	padding: 1em;
 	width: 97%
 }
 
@@ -19,7 +19,7 @@ th.style1 {
 	font-family: "Reenie Beanie", cursive;
 	border: 1px solid black;
 	border-collapse: collapse;
-	padding: 12px;
+	padding: .5em;
 	text-align: center;
 	font-size: 1.42em;
 }
@@ -27,7 +27,7 @@ th.style1 {
 tr.style1 {
 	border: 1px solid black;
 	border-collapse: collapse;
-	padding: 12px;
+	padding: 1em;
 	font-size: 1.22em;
 }
 
@@ -37,6 +37,8 @@ tr.style1:hover td {
 
 td.style1 {
 	font-family: "Reenie Beanie", cursive;
+	text-align: center;
+	padding: .2em;
 }
 
 h1.style1 {
@@ -60,4 +62,15 @@ p.style1 {
 	color: white;
     	font-family: "Reenie Beanie", cursive;
     	font-size: 1.32em;
+}
+
+input.style1 {
+	color: white;
+    	font-family: "Reenie Beanie", cursive;
+    	font-size: 1em;
+	font-weight: bold;
+    	text-align: left;
+	border: 1px solid black;
+	background: #777777;
+	padding: .25em;
 }
