@@ -64,7 +64,7 @@ p.style1 {
     	font-size: 1.32em;
 }
 
-input.style1 {
+input[type=text].style1 {
 	color: white;
     	font-family: "Reenie Beanie", cursive;
     	font-size: 1em;

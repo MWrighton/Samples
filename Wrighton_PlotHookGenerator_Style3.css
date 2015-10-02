@@ -55,3 +55,14 @@ p.style3 {
     	font-family: "Homemade Apple", cursive;
     	font-size: 1.2em;
 }
+
+input[type=text].style3 {
+	color: #AA3300;
+    	font-family: "Homemade Apple", cursive;
+    	font-size: 1em;
+	font-weight: none;
+    	text-align: left;
+	border: 1px solid black;
+	background: #FFFFCC;
+	padding: 1em;
+}

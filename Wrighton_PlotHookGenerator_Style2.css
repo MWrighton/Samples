@@ -5,14 +5,15 @@ body.style2 {
 div.style2 {
     	background-color: #006600;
 	margin: 5em;
+	padding: .25em;
 }
 
 table.style2 {
 	margin: auto;
 	border: 2px solid black;
 	border-collapse: collapse;
-	padding: 12px;
-	width: 50%
+	padding: .25em;
+	width: 50%;
 }
 
 th.style2 {
@@ -20,7 +21,7 @@ th.style2 {
 	border: 1px solid black;
 	border-collapse: collapse;
 	font-size: 1.6em;
-	padding: 12px;
+	padding: .25em;
 	text-align: center;
 }
 
@@ -28,7 +29,7 @@ tr.style2 {
 	border: 1px solid black;
 	border-collapse: collapse;
 	font-size: 1.3em;
-	padding: 12px;
+	padding: .25em;
 }
 
 td.style2 {
@@ -56,4 +57,15 @@ p.style2 {
 	color: white;
     	font-family: "Tangerine", cursive;
     	font-size: 1.6em;
+}
+
+input[type=text].style2 {
+	color: white;
+    	font-family: "Tangerine", cursive;
+    	font-size: 1em;
+	font-weight: none;
+    	text-align: left;
+	border: 1px solid black;
+	background: #003300;
+	padding: .25em;
 }
